@@ -1,0 +1,17 @@
+####Question 1 Code:
+weight = eval(input("Enter the weight of the package: "))
+
+rate1 = 1.50
+rate2 = 3.00
+rate3 = 4.00
+rate4 = 4.75
+
+
+if weight <= 2: 
+    print('Shipping charge: $ %.2f' % rate1)
+elif 2 < weight < 6:
+    print('Shipping charge: $ %.2f' % rate2)
+elif 6 <= weight < 10:
+    print('Shipping charge: $ %.2f' % rate3)
+else:
+    print('Shipping charge: $ %.2f' % rate4)
