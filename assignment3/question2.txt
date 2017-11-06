@@ -1,1 +1,53 @@
-# Question 2
+####Question 2 Code:
+class Employee:
+    def __init__(self, name="",idNumber=0,jobTitle="",department=""):
+        self._name=name
+        self._idNumber=idNumber
+        self._jobTitle=jobTitle
+        self._deparment=department
+    
+    def setName(self,name):
+        self._name=name
+    def setIdNumber(self,idNumber):
+        self._idNumber=idNumber
+    def setJobTitle(self,jobTitle):
+        self._jobTitle=jobTitle
+    
+    def setDepartment(self,department):
+        self._department
+    
+    def getName(self):
+        return self._name
+    def getidNumber(self):
+        return self._idNumber
+    def getjobTitle(self):
+        return self._jobTitle
+    def getdepartment(self):
+        return self._department
+    
+    def __str__(self):
+        return self._name+"\t"+self,_idNumber +'\t'+ self._jobTitle+"\t"+self._deparmtent
+def main():
+    empList=[("Susan Meyers", "47899", "Accounting", "Vice President"),("Mark Jones", "3911", "IT programmer"),("Joy Rogers", "81774", "Manufacturing Engineer") ]
+    emp1Name= empList[0][0]
+    emp1IdNumber=empList[0][1]
+    emp1JobDepartment=empList[0][2]
+    emp1JobTitle=empList[0][2]
+    
+    emp2Name= empList[1][0]
+    emp2IdNumber=empList[1][1]
+    emp2JobDepartment=empList[1][2]
+    emp2JobTitle=empList[1][2]
+    
+    
+    emp3Name= empList[1][0]
+    emp3IdNumber=empList[1][1]
+    emp3JobDepartment=empList[1][2]
+    emp3JobTitle=empList[1][2]
+    
+    
+    print("employee1:","\n","Name:", emp1Name,"\n","ID number:",emp1IdNumber,"\n","Department:",emp1JobDepartment,"\n","Title: ",emp1JobTitle)
+    print("Employee2:","\n","Name:", emp2Name,"\n","ID number:",emp2IdNumber,"\n","Department:",emp2JobDepartment,"\n","Title: ",emp2JobTitle)
+    print("Employee3:","\n","Name:", emp3Name,"\n","ID number:",emp3IdNumber,"\n","Department:",emp3JobDepartment,"\n","Title: ",emp3JobTitle)
+    
+main()
