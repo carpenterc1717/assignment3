@@ -42,3 +42,41 @@ if __name__ == '__main__':
     encrypted_string = encrypt(string)
     write(encrypted_string)
             
+----------------------------------------------------------------
+code = {'A':')','a':'0','B':'(','b':'9','C':'*','c':'8',\
+        'D':'&','d':'7','E':'^','e':'6','F':'%','f':'5',\
+        'G':'$','g':'4','H':'#','h':'3','I':'@','i':'2',\
+        'J':'!','j':'1','K':'Z','k':'z','L':'Y','l':'y',\
+        'M':'X','m':'x','N':'W','n':'w','O':'V','o':'v',\
+        'P':'U','p':'u','Q':'T','q':'t','R':'S','r':'s',\
+        'S':'R','s':'r','T':'Q','t':'q','U':'P','u':'p',\
+        'V':'O','v':'o','W':'N','w':'n','X':'M','x':'m',\
+        'Y':'L','y':'l','Z':'K','z':'k'}
+def main():
+    file_read = text_read()
+    print(file_read)
+    fileEncrypt = text_encrypt(file_read)
+    #print(fileEncrypt)
+    text_write(fileEncrypt)
+def text_read():
+    infile = open('Q1-Data.txt','r')
+    file_read = infile.read() 
+    infile.close()
+    return file_read
+
+def text_encrypt(infile):
+    encrypted_text = ""
+    for ch in infile:
+        if (ch.isalpha()):
+            encrypted_text += code[ch]
+        else: 
+            encrypted_text += ch
+    return encrypted_text
+
+def text_write(fileEncrypt):
+    solution = open("Q1-Data_Encrypted.text", 'w')
+    for word in fileEncrypt:
+        solution.write(word)
+    solution.close()
+    
+main()
