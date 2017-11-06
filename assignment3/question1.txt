@@ -35,4 +35,10 @@ def encrypt(s):
 def write(s):
     with open('Q1-Data_Encrypted.txt', 'w') as f:
         f.write(s)
+        
+#wrap
+if __name__ == '__main__':
+    string = read()
+    encrypted_string = encrypt(string)
+    write(encrypted_string)
             
