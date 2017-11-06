@@ -1,1 +1,38 @@
 ####Question 1 Code:
+
+#Encryption dictionary
+code = {'A':')','a':'0','B':'(','b':'9','C':'*','c':'8',
+        'D':'&','d':'7','E':'^','e':'6','F':'%','f':'5',
+        'G':'$','g':'4','H':'#','h':'3','I':'@','i':'2',
+        'J':'!','j':'1','K':'Z','k':'z','L':'Y','l':'y',
+        'M':'X','m':'x','N':'W','n':'w','O':'V','o':'v',
+        'P':'U','p':'u','Q':'T','q':'t','R':'S','r':'s',
+        'S':'R','s':'r','T':'Q','t':'q','U':'P','u':'p',
+        'V':'O','v':'o','W':'N','w':'n','X':'M','x':'m',
+        'Y':'L','y':'l','Z':'K','z':'k'}
+
+#Opening Q1-Data.txt and setting it to f (string)
+def read():
+    with open('Q1-Data.txt', 'r') as f:
+        return f.read()
+
+#Loop that will encrypt the characters based on the dictionary above
+def encrypt(s):
+    ret = ""
+    
+# tests to see if the characters are in the dictionary above
+    for c in s:
+        if c.isalpha(): 
+            
+            ret += code[c]
+# will write a space if the character is not in the encryption dictionary
+        else:
+            ret += c
+            
+    return ret
+
+#Writing the new string to the new txt file
+def write(s):
+    with open('Q1-Data_Encrypted.txt', 'w') as f:
+        f.write(s)
+            
