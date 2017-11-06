@@ -1,1 +1,97 @@
 # Question 3
+
+
+class Employee:
+
+    def __init__(self, name="",idNumber=0,department="",jobTitle=""):
+        self._name=name
+        self._idNumber=idNumber
+        self._jobTitle=jobTitle
+        self._department=department
+
+    
+    def setName(self,name):
+        self._name=name
+
+    def setIdNumber(self,idNumber):
+        self._idNumber=idNumber
+
+    def setJobTitle(self,jobTitle):
+        self._jobTitle=jobTitle
+    
+    def setDepartment(self,department):
+        self._department
+    
+    def getName(self):
+        return self._name
+
+    def getidNumber(self):
+        return self._idNumber
+
+    def getjobTitle(self):
+        return self._jobTitle
+
+    def getdepartment(self):
+        return self._department
+    
+    def __str__(self):
+        return self._name+"\t"+self,_idNumber +'\t'+ self._jobTitle+"\t"+self._deparmtent
+
+def main():
+
+    
+    listOfEmployees={}
+    moreInfo=input("Do you wamt to enter employee: ")
+   
+    while moreInfo== 'Y':
+        name=input("Enter employee's name: ")
+        idNumber= input("Enter employees id number:  ")
+        department= input("Enter employees department: ")
+        jobTitle= input("Enter employees job title: ")
+        moreInfo=input("Enter another employee information? (Y/N): ")
+        em=Employee(name,idNumber,department,jobTitle)
+        listOfEmployees[idNumber]=em
+            
+            
+    
+      
+    print("Please select from the following menu","\n")
+    print("1.look up employee in dictonary")
+    print("2. Add new employee to Dictonary")
+    print("3.Delet an employee from Dictonary")
+    print("4.Quit the program")
+    menuNum=(input("Please enter a number from the menu: "))
+    if menuNum=="2":
+        dic_add(listOfEmployees)
+    elif menuNum=='3':
+                
+        dic_delet(listOfEmployees)
+    elif menuNum=="1":
+        
+        dic_lookup(listOfEmployees)
+    
+    
+                
+def dic_add(listOfEmployees):
+            name=input("Enter employee's name: ")
+            idNumber= input("Enter employees id number:  ")
+            department= input("Enter employees department: ")
+            jobTitle= input("Enter employees job title: ")
+            moreInfo=input("Enter another employee information? (Y/N): ")
+            em=Employee(name,idNumber,department,jobTitle)
+            listOfEmployees[idNumber]=em
+
+
+def dic_delet(listOfEmployees):
+    empDel=input("Please enter employee ID to delet the Employee: ")
+    del listOfEmployees[empDel]  
+                
+def dic_lookup(listOfEmployees):
+    empLookUp=input("Please enter the Employee ID to look up: ")
+    emp=listOfEmployees[empLookUp]
+    print(emp.getName())
+    print(emp.getidNumber())
+    print(emp.getjobTitle())
+    print(emp.getdepartment())
+
+main()
